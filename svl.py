@@ -1,7 +1,3 @@
-# =========================================================
-# IMPORTS Y LIBRERÍAS NECESARIAS
-# =========================================================
-
 # Manejo de datos
 import numpy as np
 import pandas as pd
@@ -24,17 +20,16 @@ import seaborn as sns
 
 
 # =========================================================
-# SCRIPT 2 — CARGA DEL CSV Y VISUALIZACIÓN
+# CARGA DEL DATASET
 # =========================================================
 
-# Cargar dataset (asegúrate que el archivo esté en la misma carpeta)
 df = pd.read_csv("heart_disease.csv")
 
-# Mostrar las primeras filas
+
 print("Primeras filas del dataset:")
 print(df.head().to_string())
 
-# Mostrar información general
+
 print("\nInformación del dataset:")
 print(df.info())
 
@@ -47,14 +42,13 @@ print(f"\nDataset cargado correctamente con {df.shape[0]} filas y {df.shape[1]} 
 
 
 # =========================================================
-# SCRIPT 3 — ENTRENAMIENTO SVM Y GRÁFICAS COMPLETAS
+# ENTRENAMIENTO SVM Y GRÁFICAS COMPLETAS
 # =========================================================
 
-# -------- Selección de variables --------
 y = df["target_binary"]
 X = df.drop(columns=["target_binary", "num"], errors="ignore")
 
-# -------- División train/test --------
+
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )

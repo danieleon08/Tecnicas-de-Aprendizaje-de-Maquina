@@ -1,7 +1,3 @@
-# =========================================================
-# SCRIPT 1 — IMPORTS Y LIBRERÍAS NECESARIAS
-# =========================================================
-
 # Manejo de datos
 import numpy as np
 import pandas as pd
@@ -23,7 +19,7 @@ import seaborn as sns
 
 
 # =========================================================
-# SCRIPT 2 — CARGA DEL CSV Y VISUALIZACIÓN
+# CARGA DEL DATASET
 # =========================================================
 
 # Cambia esta ruta por la ruta en tu PC
@@ -46,7 +42,7 @@ print(f"\nDataset cargado correctamente con {df.shape[0]} filas y {df.shape[1]} 
 
 
 # =========================================================
-# PREPROCESAMIENTO GENERAL — COMÚN A TODAS LAS TÉCNICAS
+# PREPROCESAMIENTO GENERAL
 # =========================================================
 
 # Variable objetivo
@@ -69,11 +65,11 @@ print("\nPreprocesamiento completado correctamente.")
 
 
 # =========================================================
-# SCRIPT 3 — ENTRENAR MLP Y GRAFICAR RESULTADOS
+# ENTRENAR MLP Y GRAFICAR RESULTADOS
 # =========================================================
 
 mlp = MLPClassifier(
-    hidden_layer_sizes=(100,),
+    hidden_layer_sizes=(50,30),
     activation='relu',
     solver='adam',
     max_iter=500,
